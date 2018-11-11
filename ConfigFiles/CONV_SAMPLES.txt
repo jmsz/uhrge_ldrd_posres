@@ -1,0 +1,8 @@
+###################################################
+# This is a dummy file, doing nothing other than  #
+# invert the pulse (maybe                         #
+###################################################
+
+#Segments to invert:
+#INVERT                                           1 !
+ADL_G_SAMPLES_Filename  ConfigFiles/PulseRespo.txt !

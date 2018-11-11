@@ -1,0 +1,44 @@
+###################################################
+#Geometry file for a typical STRIP detector
+###################################################
+
+STRIP_G_PasLayThickness          -0.01 !
+STRIP_G_Radius                    0.10 !
+STRIP_G_Height                    1.50 !
+STRIP_G_TopContactDepth           0.10 !
+STRIP_G_BotContactDepth           0.10 !
+STRIP_G_ImpTop                   -1.05 ! five percent gradient
+STRIP_G_ImpBot                   -1.00 !
+STRIP_G_Spacing                   0.00 ! No spacing
+STRIP_G_ExtGroundWidth            0.00 ! External ground potential (if in a grounded container)
+
+STRIP_G_TopStripWidth             0.025 ! 0.6 was default
+STRIP_G_TopGapWidth               0.025 !
+STRIP_G_TopNumber                   5 !
+<<<<<<< HEAD
+
+STRIP_G_BotStripWidth             0.025 !
+STRIP_G_BotGapWidth               0.025 !
+STRIP_G_BotNumber                   5 !
+=======
+>>>>>>> 8e4fc31f062c017dc3c2e0335f07bdd8b411ae1f
+
+SIMION_G_GridSize                0.005 ! grid size in cm
+SIMION_G_EpsScale                16.0 ! epsilon scale relative to epsilon_0
+SIMION_G_EpsExtScale              1.0 ! external permittivity (usually 1=vacuum)
+SIMION_G_Description            Strip !
+
+SIMION_G_Dimension                  3 ! 2 for 2D 3 for 3D
+SIMION_G_Voltage                 2000 ! Canberra data sheet
+
+SIMION_G_RhoScale                 1.0 ! space charge density scale, relative to 10^10/cm^3
+SIMION_G_Tol                    1e-10 ! required tolerance for solution
+SIMION_G_DEBUG                      0 ! print extra information if != 0
+
+ADL_G_SIMION_SmallPot            1e-6 ![V] Small potential, Defines e.g. ADL_In_Detector_SIMION
+
+ADL_G_Wpot         Strip_Wpot_%02d.pa ! Location where the weighting potential is saved
+ADL_G_Epot              Strip_Epot.pa ! Location where the electric potential is saved
+ADL_G_Stru         Strip_Stru_%02d.pa ! Location where the structural potential is saved
+
+ADL_SCALE_0                         1 !Epot.pa0 (Electrical field space charge)

@@ -1,0 +1,53 @@
+###################################################
+#This file is an example for the setup of the file
+#  ADL_Setup
+###################################################
+
+# This file is written for ADL version 3.0:
+ADL_G_VERSION 	3.0
+
+# The debugin mode is switched off:
+ADL_G_DEBUG	1		#Debugging mode switched OFF
+
+# The Geometry of the INVC
+SIMION_GEOMETRY_STRIP ConfigFiles/STRIP.txt
+
+# The Geometry of the INVC
+SIMION_SOLVER_INHOMOG ConfigFiles/STRIP.txt
+
+# For a simple planar detector, we can use exact analytical expressions for the fields:
+# For more complicated geometries, we can use the numerical solutions using _SIMION
+ADL_FIELDS_SIMION	ConfigFiles/STRIP.txt
+
+# Here you define the event structure - this should be done first: 
+# How many interactions maximum in an event, how many samples in the traces, how many segments...
+# EDIT THIS PART!!!
+ADL_EVENT		ConfigFiles/EVENT.txt
+
+# you dont want to use a response function for your preamp,
+# so we can set the convolution to a dummy function:
+# This setup file will invert channel 0 ("core")
+ADL_CONVL_DUMMY		ConfigFiles/CONV_SAMPLES.txt
+
+# Here you define the drift velocity parameters
+# For Germanium, see:
+# Bruyneel et al NIM A 569 (2006) 764-773
+# Mihailescu et al NIM A 447 (2000) 350-360
+ADL_DRIFT_GE		ConfigFiles/DRIFT_GE.txt
+
+# Here we define how events will be read in and written out:
+# Choices are binary "BIN", text "TXT", dino's tkt "TKT" (write only)
+# I selected txt to begin with:
+ADL_READWRITE		ConfigFiles/READWRITE_TXT.txt
+
+# Applies a fast filter to estimate the trigger time of the event:
+# (not so important : commented out)
+# ADL_TIME_FAST		ConfigFiles/TIME_FAST.txt
+
+# Here the settings for the routine which finally does all the work:
+# These settings should normally not be altered, but the library always has to be setup:
+ADL_TRACES_NUMRES	ConfigFiles/TRACES_NUMRES.txt
+
+#ADL_G_DEBUG	1	#Lets have a look at this one... Debugging mode switched on:
+# This will introduce the TRAPPING
+ADL_TRAPPING		ConfigFiles/TRAPPING.txt
