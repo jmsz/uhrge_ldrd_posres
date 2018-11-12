@@ -1,9 +1,0 @@
-###############################
-#Setup file for EVENTSTRUCTURE#
-###############################
-
-
-ADL_G_EVENT_NINT   1	     #nInt:maximum number of interactions assumed
-ADL_G_EVENT_NSEG   10  	   #nSeg:number of segments in play (including Core)
-ADL_G_EVENT_DIMT  300	   #dimT:trace length [0...dimT]!!!  WAS 300, and deltaTwas 1 ns
-ADL_G_EVENT_DeltaT 	0.001 #[us]:Sampling interval to store traces Tr[nSeg][dimT+1]
